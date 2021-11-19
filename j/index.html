@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkPage</title>
+    <style>
+        span{
+            font-size: 24px;
+        }
+        .import{
+            color: red;
+            font-size: 24px;
+        }
+    </style>
+    <script type="text/javascript">  
+        function password() {
+            var testV = 1;
+            var pass1 = prompt('请输入密码', '');
+            while (testV != 0) {
+                if (!pass1)
+                    history.go(-1);
+                if (pass1 == "93454983") { //初始密码
+                    break;
+                }
+                testV += 1;
+                var pass1 =
+                    prompt('密码错误!请重新输入:');
+            }
+            if (pass1 != "password" & testV == 3)
+                history.go(0);
+            return " ";
+        }
+        document.write(password());
+        function topage2(){
+            var name=document.getElementById("name").value;
+            var sclass=document.getElementById("class").value;
+            var studentnumber=document.getElementById("studentnumber").value;
+            var phonenumber=document.getElementById("phonenumber").value;
+            var requesttime=document.getElementById("requesttime").value;
+            var stime=document.getElementById("stime").value;
+            var edtime=document.getElementById("edtime").value;
+            var reason=document.getElementById("reason").value;
+            var details=document.getElementById("details").value;
+            var passtime=document.getElementById("passtime").value;
+            var day=document.getElementById("day").value;
+            var duration=document.getElementById("duration").value;
+            var myurl="jt.html"+"?"+"name="+name+"&class="+sclass+"&studentnumber="+studentnumber+"&phonenumber="+phonenumber+"&requesttime="+requesttime+"&stime="+stime+"&edtime="+edtime+"&reason="+reason+"&details="+details+"&passtime="+passtime+"&day="+day+"&duration="+duration;
+            window.location.assign(encodeURI(myurl));  
+        }  
+    </script> 
+</head>
+<body>
+    <input id="name" class="input-box" type="text" placeholder="姓名">
+    <input id="class" class="input-box" type="text" placeholder="班级">
+    <input id="studentnumber" class="input-box" type="text" placeholder="学号">
+    <input id="phonenumber" class="input-box" type="text" placeholder="电话">
+    <input id="requesttime" class="input-box" type="text" placeholder="假条申请时间">
+    <input id="stime" class="input-box" type="text" placeholder="开始时间">
+    <input id="edtime" class="input-box" type="text" placeholder="结束时间">
+    <input id="reason" class="input-box" type="text" placeholder="请假原因">
+    <input id="details" class="input-box" type="text" placeholder="请假详细情况">
+    <input id="passtime" class="input-box" type="text" placeholder="假条通过时间">
+    <input id="day" class="input-box" type="text" placeholder="请假天数">
+    <input id="duration" class="input-box" type="text" placeholder="耗时(分钟/小时)">
+    <input type="button" value="下一步" onclick="topage2()">
+    <p>
+        <span class="import">开始和结束时间</span>格式为<span class="import">YYYY-MM-DD空格HH:MM:SS</span> <br> <span class="import" >假条申请时间</span>和<span class="import" >假条通过时间</span>格式为 <span class="import">YYYY:MM:DD空格HH:MM</span>
+    </p>
+</body>
+</html>
