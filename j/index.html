@@ -22,9 +22,10 @@
                 if (pass1 == "93454983") { //初始密码
                     alert('密码正确!');
                     break;
+                }else{
+                    testV += 1;
+                    var pass1 = prompt('密码错误!请重新输入:');
                 }
-                testV += 1;
-                var pass1 = prompt('密码错误!请重新输入:');
             }
             if (pass1 != '93454983' && testV == 3){
                     //history.go(0);
