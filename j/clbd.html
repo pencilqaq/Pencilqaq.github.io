@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./web.css">
     <title>处理表单</title>
+    <script src="./base64.js"></script>
 </head>
+
 <body>
     <div class="">
         <div style="display: block; overflow: auto;">
-        
-        <div class="panel">
-            <div>
-                <a class="media_box" href="">
-                    <div style="width: 50px; height: 50px; line-height: 50px; text-align: center; margin-right: 12.8px;">
-                        <img src="photo.jpg" id="starter-icon" class="list-item-img">
-                    </div>
-                    <div class="media_box_content">
-                        <h4 style="white-space: normal;font-weight: bold; font-size: 14px;">学生请假审批表</h4>
-                        <p>
-                            <span style="color: #3FB0FB;text-decoration: underline;"><span id="name1">柳皓翔</span></span>
-                            <span>&nbsp;<span id="requesttime">2021-11-11 10:35</span></span>
-                        </p>
-                        <p>学号: <span id="studentnumber">200860402</span></p>
-                        <p>姓名: <span id="name2">柳皓翔</span></p>
-                        <p>教学系: 信息工程系</p>
-                        <p>专业: 影视动画(士官)</p>
-                        <p>班级: <span id="class">影视动画20-4</span></p>
-                        <p>联系电话: <span id="phonenumber">17609871124</span></p>
-                        <p>请假天数: <span id="day">0.3</span></p>
-                        <p>开始时间: <span id="stime">2021-11-11 12:00:00</span></p>
-                        <p>结束时间: <span id="edtime">2021-11-11 20:00:00</span></p>
-                        <p>请假原因: <psan id="reason">病假</psan></p>
-                        <p>请假详细情况: <span id="details">感冒了 头疼</span></p>
-                        <p>请假所在位置: 辽宁省,沈阳市,沈北新区,站前街</p>
-                        <p style="display:none;-webkit-line-clamp: 10;"></p>
-                    </div>
-                    <div class="end">已办结</div>
+
+            <div class="panel">
+                <div>
+                    <a class="media_box" href="">
+                        <div
+                            style="width: 50px; height: 50px; line-height: 50px; text-align: center; margin-right: 12.8px;">
+                            <img src="photo.jfif" id="starter-icon" class="list-item-img">
+                        </div>
+                        <div class="media_box_content">
+                            <h4 style="white-space: normal;font-weight: bold; font-size: 14px;">学生请假审批表</h4>
+                            <p>
+                                <span style="color: #3FB0FB;text-decoration: underline;"><span
+                                        id="name1">柳皓翔</span></span>
+                                <span>&nbsp;<span id="requesttime">2021-11-11 10:35</span></span>
+                            </p>
+                            <p>学号: <span id="studentnumber">200860402</span></p>
+                            <p>姓名: <span id="name2">柳皓翔</span></p>
+                            <p>教学系: 信息工程系</p>
+                            <p>专业: 影视动画(士官)</p>
+                            <p>班级: <span id="class">影视动画20-4</span></p>
+                            <p>联系电话: <span id="phonenumber">17609871124</span></p>
+                            <p>请假天数: <span id="day">0.3</span></p>
+                            <p>开始时间: <span id="stime">2021-11-11 12:00:00</span></p>
+                            <p>结束时间: <span id="edtime">2021-11-11 20:00:00</span></p>
+                            <p>请假原因: <psan id="reason">病假</psan>
+                            </p>
+                            <p>请假详细情况: <span id="details">感冒了 头疼</span></p>
+                            <p>请假所在位置: 辽宁省,沈阳市,沈北新区,站前街</p>
+                            <p style="display:none;-webkit-line-clamp: 10;"></p>
+                        </div>
+                        <div class="end">已办结</div>
+                    </a>
+                </div>
+                <a class="webui_panel_ft" href="" style="color: #586c94;">
+                    表单预览
+                </a>
+                <a class="webui_panel_ft" href="" style="color: #586c94;">
+                    二维码
                 </a>
             </div>
-            <a class="webui_panel_ft" href="" style="color: #586c94;">
-            表单预览
-            </a>
-            <a class="webui_panel_ft" href="" style="color: #586c94;">
-                二维码
-            </a>
-        </div>
         </div>
         <div class="webui_panel_contect">
-        <div style="margin-top: 1.17647059em;">
-            <div class="webui_panel">
-                <div class="webui_panel_hd">
-                    <img src="photo.jpg" alt="" style="    -webkit-text-size-adjust: 100%;
+            <div style="margin-top: 1.17647059em;">
+                <div class="webui_panel">
+                    <div class="webui_panel_hd">
+                        <img src="photo.jfif" alt="" style="    -webkit-text-size-adjust: 100%;
                     line-height: 1.6;
                     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
                     color: #999;
@@ -66,104 +72,114 @@
                     height: 20px;
                     border-radius: 50%;
                     vertical-align: top;">
-                    <a href="" style="color: #3FB0FB;text-decoration: underline;">
-                        郜家宏
-                    </a>
-                    <a class="bottom_1" href="" style="color: white;">回复</a>
-                </div>
-                <div class="webui_panel_bd">
-                    <ul>
-                        <li style="float: left; color: #999; font-size: 13px;">已通过&nbsp;&nbsp;&nbsp;&nbsp;</li>
-                        <li style="float: left; padding: 0 13px 0 0; color: #cecece; font-size: 13px;"><span id="passtime">2021-11-11 13:06</span></li>
-                        <li style="float: right; color: #cecece; font-size: 13px;"><span id="duration">用时2小时</span></li>
-                    </ul>
+                        <a id="teacher" href="">
+                            郜家宏
+                        </a>
+                        <a class="button_1" href="" style="color: white;">回复</a>
+                    </div>
+                    <div class="webui_panel_bd">
+                        <ul>
+                            <li style="float: left; color: #999; font-size: 13px;">已通过&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li style="float: left; padding: 0 13px 0 0; color: #cecece; font-size: 13px;"><span
+                                    id="passtime">2021-11-11 13:06</span></li>
+                            <li style="float: right; color: #cecece; font-size: 13px;"><span id="duration">用时2小时</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
     </div>
     <script>
-        var str=parent.location.href;
-    function name1(){
-        var a1=str.split("?")[1];
-        var a2=a1.split("&")[0];
-        var a3=a2.split("=")[1];
-        document.getElementById("name1").innerHTML=decodeURI(a3);
-    }
-    function name2(){
-        var a1=str.split("?")[1];
-        var a2=a1.split("&")[0];
-        var a3=a2.split("=")[1];
-        document.getElementById("name2").innerHTML=decodeURI(a3);
-    }
-    function sclass(){
-        var a1=str.split("&")[1];
-        var a2=a1.split("=")[1];
-        document.getElementById("class").innerHTML=decodeURI(a2);
-    }
-    function studentnumber(){
-        var a1=str.split("&")[2];
-        var a2=a1.split("=")[1];
-        document.getElementById("studentnumber").innerHTML=decodeURI(a2);
-    }
-    function phonenumber(){
-        var a1=str.split("&")[3];
-        var a2=a1.split("=")[1];
-        document.getElementById("phonenumber").innerHTML=decodeURI(a2);
-    }
-    function requesttime(){
-        var a1=str.split("&")[4];
-        var a2=a1.split("=")[1];
-        document.getElementById("requesttime").innerHTML=decodeURI(a2);
-    }
-    function stime(){
-        var a1=str.split("&")[5];
-        var a2=a1.split("=")[1];
-        document.getElementById("stime").innerHTML=decodeURI(a2);
-    }
-    function edtime(){
-        var a1=str.split("&")[6];
-        var a2=a1.split("=")[1];
-        document.getElementById("edtime").innerHTML=decodeURI(a2);
-    }
-    function reason(){
-        var a1=str.split("&")[7];
-        var a2=a1.split("=")[1];
-        document.getElementById("reason").innerHTML=decodeURI(a2);
-    }
-    function details(){
-        var a1=str.split("&")[8];
-        var a2=a1.split("=")[1];
-        document.getElementById("details").innerHTML=decodeURI(a2);
-    }
-    function passtime(){
-        var a1=str.split("&")[9];
-        var a2=a1.split("=")[1];
-        document.getElementById("passtime").innerHTML=decodeURI(a2);
-    }
-    function day(){
-        var a1=str.split("&")[10];
-        var a2=a1.split("=")[1];
-        document.getElementById("day").innerHTML=decodeURI(a2);
-    }
-    function duration(){
-        var a1=str.split("&")[11];
-        var a2=a1.split("=")[1];
-        document.getElementById("duration").innerHTML=decodeURI(a2);
-    }
-    name1();
-    name2();
-    sclass();
-    studentnumber();
-    phonenumber();
-    requesttime();
-    stime();
-    edtime();
-    reason();
-    details();
-    passtime();
-    day();
-    duration();
+        var str = Base64.decode(parent.location.href.split("?")[1]);//解码URL中的信息
+
+        function name1() {
+            var a1 = str.split("&")[0];
+            var a2 = a1.split("=")[1];
+            document.getElementById("name1").innerHTML = a2;
+            document.getElementById("name2").innerHTML = a2;
+        }
+
+        function sclass() {
+            var a1 = str.split("&")[1];
+            var a2 = a1.split("=")[1];
+            document.getElementById("class").innerHTML = a2;
+        }
+
+        function studentnumber() {
+            var a1 = str.split("&")[2];
+            var a2 = a1.split("=")[1];
+            document.getElementById("studentnumber").innerHTML = a2;
+        }
+
+        function phonenumber() {
+            var a1 = str.split("&")[3];
+            var a2 = a1.split("=")[1];
+            document.getElementById("phonenumber").innerHTML = a2;
+        }
+
+        function requesttime() {
+            var a1 = str.split("&")[4];
+            var a2 = a1.split("=")[1];
+            var aa = a2.replace("T", " ");
+            document.getElementById("requesttime").innerHTML = a2;
+        }
+
+        function stime() {
+            var a1 = str.split("&")[5];
+            var a2 = a1.split("=")[1];
+            document.getElementById("stime").innerHTML = a2;
+        }
+
+        function edtime() {
+            var a1 = str.split("&")[6];
+            var a2 = a1.split("=")[1];
+            document.getElementById("edtime").innerHTML = a2;
+        }
+
+        function reason() {
+            var a1 = str.split("&")[7];
+            var a2 = a1.split("=")[1];
+            document.getElementById("reason").innerHTML = a2;
+        }
+
+        function details() {
+            var a1 = str.split("&")[8];
+            var a2 = a1.split("=")[1];
+            document.getElementById("details").innerHTML = a2;
+        }
+
+        function passtime() {
+            var a1 = str.split("&")[9];
+            var a2 = a1.split("=")[1];
+            document.getElementById("passtime").innerHTML = a2;
+        }
+
+        function day() {
+            var a1 = str.split("&")[10];
+            var a2 = a1.split("=")[1];
+            document.getElementById("day").innerHTML = a2;
+        }
+
+        function duration() {
+            var a1 = str.split("&")[11];
+            var a2 = a1.split("=")[1];
+            document.getElementById("duration").innerHTML = a2;
+        }
+        name1();
+        //name2();
+        sclass();
+        studentnumber();
+        phonenumber();
+        requesttime();
+        stime();
+        edtime();
+        reason();
+        details();
+        passtime();
+        day();
+        duration();
     </script>
 </body>
+
 </html>

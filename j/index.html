@@ -1,78 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkPage</title>
-    <style>
-        span{
-            font-size: 24px;
-        }
-        .import{
-            color: red;
-            font-size: 24px;
-        }
-    </style>
-    <script type="text/javascript">  
-        function password() {
-            var testV = 1;
+    <link rel="stylesheet" href="linkcss.css">
+    <title>JumpPage</title>
+    <script src="./base64.js"></script>
+    <script type="text/javascript">
+        /*
+            var testX = 1;
             var pass1 = prompt('请输入密码', '');
-            while (testV < 3) {
+            while (testX < 3) {
                 if (pass1 == "93454983") { //初始密码
                     alert('密码正确!');
                     break;
                 }else{
-                    testV += 1;
+                    testX += 1;
                     var pass1 = prompt('密码错误!请重新输入:');
                 }
             }
-            if (pass1 != '93454983' && testV == 3){
-                    //history.go(0);
+            if (pass1 != '93454983' && testX == 3){
                     alert('密码错误，页面即将关闭.');
-                    window.parent.opener=null;
-                    window.parent.open('','_self');
+                    //window.parent.opener=null;
+                    //window.parent.open('','_self');
                     //window.close();
+                    //history.back(-1);
                     window.parent.close();
-                    history.back(-1);
+                    
                 }
-            //console.log(pass1);
+                */
+
+        var random = Math.floor(Math.random() * 60); // 随机生成0-59 之间的数值
+        if (random <= 9) //个位数补零
+            random = "0" + random.toString();
+        else
+            rendom = random.toString();
+        console.log(random);
+
+
+        function jumpTopage() {
+            var name = document.getElementById("name").value;
+            var sclass = document.getElementById("class").value;
+            var studentnumber = document.getElementById("studentnumber").value;
+            var phonenumber = document.getElementById("phonenumber").value;
+            var requesttime = document.getElementById("requesttime").value;
+            var stime = document.getElementById("stime").value;
+            var edtime = document.getElementById("edtime").value;
+            var reason = document.getElementById("reason").value;
+            var details = document.getElementById("details").value;
+            var passtime = document.getElementById("passtime").value;
+            var day = document.getElementById("day").value;
+            var duration = document.getElementById("duration").value;
+            var base = Base64.encodeURI("name=" + name + "&class=" + sclass + "&studentnumber=" + studentnumber +
+                "&phonenumber=" + phonenumber + "&requesttime=" + requesttime + "&stime=" + stime + "&edtime=" +
+                edtime + "&reason=" + reason + "&details=" + details + "&passtime=" + passtime + "&day=" + day +
+                "&duration=" + duration);
+            var myurl = "jt.html?" + base;
+            window.location.assign(myurl);
         }
-        password();
-        function topage2(){
-            var name=document.getElementById("name").value;
-            var sclass=document.getElementById("class").value;
-            var studentnumber=document.getElementById("studentnumber").value;
-            var phonenumber=document.getElementById("phonenumber").value;
-            var requesttime=document.getElementById("requesttime").value;
-            var stime=document.getElementById("stime").value;
-            var edtime=document.getElementById("edtime").value;
-            var reason=document.getElementById("reason").value;
-            var details=document.getElementById("details").value;
-            var passtime=document.getElementById("passtime").value;
-            var day=document.getElementById("day").value;
-            var duration=document.getElementById("duration").value;
-            var myurl="jt.html"+"?"+"name="+name+"&class="+sclass+"&studentnumber="+studentnumber+"&phonenumber="+phonenumber+"&requesttime="+requesttime+"&stime="+stime+"&edtime="+edtime+"&reason="+reason+"&details="+details+"&passtime="+passtime+"&day="+day+"&duration="+duration;
-            window.location.assign(encodeURI(myurl));  
-        }  
-    </script> 
+    </script>
 </head>
+
 <body>
-    <input id="name" class="input-box" type="text" placeholder="姓名">
-    <input id="class" class="input-box" type="text" placeholder="班级">
-    <input id="studentnumber" class="input-box" type="text" placeholder="学号">
-    <input id="phonenumber" class="input-box" type="text" placeholder="电话">
-    <input id="requesttime" class="input-box" type="text" placeholder="假条申请时间">
-    <input id="stime" class="input-box" type="text" placeholder="开始时间">
-    <input id="edtime" class="input-box" type="text" placeholder="结束时间">
-    <input id="reason" class="input-box" type="text" placeholder="请假原因">
-    <input id="details" class="input-box" type="text" placeholder="请假详细情况">
-    <input id="passtime" class="input-box" type="text" placeholder="假条通过时间">
-    <input id="day" class="input-box" type="text" placeholder="请假天数">
-    <input id="duration" class="input-box" type="text" placeholder="耗时(分钟/小时)">
-    <input type="button" value="下一步" onclick="topage2()">
-    <p>
-        <span class="import">开始和结束时间</span>格式为<span class="import">YYYY-MM-DD空格HH:MM:SS</span> <br> <span class="import" >假条申请时间</span>和<span class="import" >假条通过时间</span>格式为 <span class="import">YYYY:MM:DD空格HH:MM</span>
-    </p>
+    <ul class="b" >
+        <li type="none">
+            <p><strong>姓名</strong></p>
+            <input id="name" class="input-box" type="text" placeholder="姓名">
+        </li>
+        <li type="none">
+            <p><strong>班级</strong></p>
+            <input id="class" class="input-box" type="text" placeholder="班级">
+        </li>
+        <li type="none">
+            <p><strong>学号</strong></p>
+            <input id="studentnumber" class="input-box" type="text" placeholder="学号">
+        </li>
+        <li type="none">
+            <p><strong>电话</strong></p>
+            <input id="phonenumber" class="input-box" type="tel" placeholder="电话">
+        </li>
+        <li type="none">
+            <p><strong>假条申请时间</strong></p>
+            <input id="requesttime" class="input-box" type="datetime-local" step="1" placeholder="假条申请时间">
+        </li>
+        <li type="none">
+            <p><strong>开始时间</strong></p>
+            <input id="stime" class="input-box" type="datetime-local" step="1" placeholder="开始时间">
+        </li>
+        <li type="none">
+            <p><strong>结束时间</strong></p>
+            <input id="edtime" class="input-box" type="datetime-local" step="1" placeholder="结束时间">
+        </li>
+        <li type="none">
+            <p><strong>请假原因</strong></p>
+            <select id="reason" class="input-box select" required name="事假" >
+                <option value="事假">事假</option>
+                <option value="病假">病假</option>
+                <option value="其他">其他</option>
+            </select>
+        </li>
+        <li type="none">
+            <p><strong>请假详细情况</strong></p>
+            <input id="details" class="input-box" type="text" placeholder="请假详细情况">
+        </li>
+        <li type="none">
+            <p><strong>假条批准时间</strong></p>
+            <input id="passtime" class="input-box" type="datetime-local" placeholder="假条批准时间">
+        </li>
+        <li type="none">
+            <p><strong>请假天数</strong></p>
+            <input id="day" class="input-box" type="text" placeholder="请假天数">
+        </li>
+        <li type="none">
+            <p><strong>耗时</strong></p>
+            <input id="duration" class="input-box" type="text" placeholder="耗时(分钟/小时)">
+
+        </li>
+        <li type="none">
+            <input class="button" type="submit" value="下一步" onclick="jumpTopage()">
+        </li>
+
+
+
+
+
+
+
+
+    </ul>
 </body>
+
 </html>
