@@ -33,7 +33,7 @@
                 */
         function random() {
             var random = Math.floor(Math.random() * 60); // 随机生成0-59 之间的数值
-            if (random <= 9)                             //个位数补零
+            if (random <= 9) //个位数补零
                 random = "0" + random.toString();
             else
                 random = random.toString();
@@ -87,15 +87,16 @@
         </li>
         <li type="none">
             <p><strong>假条申请时间</strong></p>
-            <input id="requesttime" class="input-box" type="datetime-local" step="1" placeholder="假条申请时间">
+
+            <input readonly="" class="input-box" type="text" id="requesttime" placeholder="假条申请时间">
         </li>
         <li type="none">
             <p><strong>开始时间</strong></p>
-            <input id="stime" class="input-box" type="datetime-local" step="1" placeholder="开始时间">
+            <input id="stime" class="input-box" type="text" placeholder="开始时间">
         </li>
         <li type="none">
             <p><strong>结束时间</strong></p>
-            <input id="edtime" class="input-box" type="datetime-local" step="1" placeholder="结束时间">
+            <input id="edtime" class="input-box" type="text" placeholder="结束时间">
         </li>
         <li type="none">
             <p><strong>请假原因</strong></p>
@@ -111,7 +112,7 @@
         </li>
         <li type="none">
             <p><strong>假条批准时间</strong></p>
-            <input id="passtime" class="input-box" type="datetime-local" placeholder="假条批准时间">
+            <input id="passtime" class="input-box" type="text" placeholder="假条批准时间">
         </li>
         <li type="none">
             <p><strong>请假天数</strong></p>
@@ -128,12 +129,62 @@
 
 
 
-
+        <input readonly="" class="form-control" type="text" id="date-group1-5" placeholder="YYYY-MM-DD hh:mm:ss">
 
 
 
 
     </ul>
 </body>
+<script>
+    window.onload = function () {
+        new Rolldate({
+            el: '#requesttime',
+            format: 'YYYY-MM-DD hh:mm:ss',
+            beginYear: 2000,
+            endYear: 2100,
+            minStep: 1,
+            trigger: 'tap',
+            lang: {
+                title: '假条申请时间'
+            },
+        })
+        new Rolldate({
+            el: '#stime',
+            format: 'YYYY-MM-DD hh:mm:ss',
+            beginYear: 2000,
+            endYear: 2100,
+            minStep: 1,
+            trigger: 'tap',
+            lang: {
+                title: '开始时间'
+            },
+        })
+        new Rolldate({
+            el: '#edtime',
+            format: 'YYYY-MM-DD hh:mm:ss',
+            beginYear: 2000,
+            endYear: 2100,
+            minStep: 1,
+            trigger: 'tap',
+            lang: {
+                title: '结束时间'
+            },
+        })
+        new Rolldate({
+            el: '#passtime',
+            format: 'YYYY-MM-DD hh:mm:ss',
+            beginYear: 2000,
+            endYear: 2100,
+            minStep: 1,
+            trigger: 'tap',
+            lang: {
+                title: '假条批准时间'
+            },
+        })
+    }
+</script>
+<script src="/jqd/rolldate.min.js"></script>
 <script src="./encode.js"></script>
+
 </html>
