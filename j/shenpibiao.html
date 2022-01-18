@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./biao.css">
+    <script src="./base64.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mainbox" style="margin-top: 54px;">
+        <p style="line-height: 22px;">
+            <br>
+        </p>
+        <p>
+            <strong style=" line-height:18px;">
+                <span style="font-size: 24px;">学生请假审批表</span>
+            </strong>
+        </p>
+        <p>
+            <img src="./barcode.png" style="display: none;">
+        </p>
+        <div style="height: 22px;">
+            <span style="line-height: 22px;">JT20210427_47464</span><!-- TJYYYYMMDD_假条编号  !!!假条编号随便写个5位数，别太小!!!  -->
+        </div>
+        <p></p>
+        <p>
+        </p>
+        <p style="height: 22px;">
+            <br>
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <td width="120" height="27" valign="middle">
+                        学号
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td width="214" height="27" valign="middle">
+                        <span id="1studentnumber">
+                            200860402
+                            <!-- 学号 -->
+                        </span>
+                    </td>
+                    <td width="148" height="27" valign="middle">
+                        姓名
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td width="176" height="27" valign="middle">
+                        <span id="1name">
+                            柳皓翔
+                            <!-- 姓名 -->
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="24" valign="middle">
+                        教学系
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td height="24" valign="middle" rowspan="1" colspan="3">
+                        <span>
+                            信息工程系
+                            <!-- 教学系 -->
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="120" height="27" valign="middle">
+                        专业
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td width="214" height="27" valign="middle">
+                        <span>
+                            影视动画(士官)
+                            <!-- 专业 -->
+                        </span>
+                    </td>
+                    <td width="148" height="27" valign="middle">
+                        班级
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td width="176" height="27" valign="middle">
+                        <span id="1class">
+                            影视动画20-4
+                            <!-- 班级 -->
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="120" height="27" valign="middle">
+                        联系电话
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td width="214" height="27" valign="middle">
+                        <span id="1phonenumber">
+                            17609871124
+                            <!-- 联系电话 -->
+                        </span>
+                    </td>
+                    <td width="148" height="27" valign="middle">
+                        请假天数
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td width="176" height="27" valign="middle">
+                        <span id="1day">
+                            2.2
+                            <!-- 请假天数 （不写单位，小数点用英文字符） -->
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="120" height="27" valign="middle">
+                        开始时间
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td width="214" height="27" valign="middle">
+                        <span id="1stime">
+                            2021-05-28 15:30:00
+                            <!-- 开始时间 格式：YYYY-MM-DD HH:MM:SS -->
+                        </span>
+                    </td>
+                    <td width="148" height="27" valign="middle">
+                        结束时间
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td width="176" height="27" valign="middle">
+                        <span id="1edtime">
+                            2021-05-30 20:00:00
+                            <!-- 结束时间 格式：YYYY-MM-DD HH:MM:SS -->
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="120" height="27" valign="middle">
+                        是否耽误课程
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td width="214" height="27" valign="middle">
+                        <div style="width: 189px; height: 16px;">
+                            <table style="border: none; width: 80px; height: 16px; margin: auto;">
+                                <tbody>
+                                    <tr>
+                                        <td height="16" style="border: none;">
+                                            <div>
+                                                <div style="display: inline-block;">
+                                                    <input type="radio"> <!-- 选中：checked ，未选中不添加 -->
+                                                    <label onclick="return false;">是</label>
+                                                </div>
+                                                <div style="display: inline-block;">
+                                                    <input type="radio"> <!-- 选中：checked ，未选中不添加 -->
+                                                    <label onclick="return false;">否</label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                            </div>
+                                            <input type="hidden" id="IS_DWKC$value" name="IS_DWKC" value="1">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                    <td width="148" height="27" valign="middle">
+                        耽误课程节数
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td width="176" height="27" valign="middle">
+                        <span>
+                            0
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="126" height="101" rowspan="1" colspan="1" valign="middle">
+                        请假原因
+                        <strong>
+                            <span class="important">*</span>
+                        </strong>
+                    </td>
+                    <td width="584" height="101" colspan="3" valign="top">
+                        <p id="1reason" style="text-align: left;">
+                            事假
+                            <!-- 请假原因 -->
+                        </p>
+                        <p>
+                            <br>
+                        </p>
+                        <span id="1details">
+                            私家车 目的地沈北新区银河街
+                        </span>
+                    </td>
+                </tr>
+                <tr height="49">
+                    <td height="27" valign="middle">
+                        上传附件
+                    </td>
+                    <td height="27" colspan="3" valign="top">
+                        <div>
+                            <p style="margin-top: 0;">
+                                <span style=" float:none; color: rgb(84, 141, 212); font-size: 14px;">
+                                    如您为病假上传病历附件，事假请上传相关佐证材料
+                                </span>
+                            </p>
+                        </div>
+                        <br>
+                        <p></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="126" height="27" valign="middle">
+                        所在位置
+                    </td>
+                    <td width="584" height="27" valign="middle" rowspan="1" colspan="3">
+                        <img src="./point.png" type="mini-coordinate" style="display: none;">
+                        <a style="padding-left: 18px; background: url(./icon-flow-zuobiao.png) no-repeat;"
+                            target="_blank" href="http://uri.amap.com/marker?position=,">
+                            辽宁省,沈阳市,沈北新区,站前街
+                        </a>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle" rowspan="1" colspan="1" height="48">
+                        辅导员意见
+                        <br>
+                    </td>
+                    <td valign="middle" rowspan="1" colspan="3" height="48">
+                        <div>
+                            <div style="text-align: left;padding: 15px 25px; ">
+                                <div style="height: 35px; line-height: 35px;">
+                                    <span style="float: left;">
+                                        郜家宏
+                                    </span>
+                                    <span id="1passtime" style="float: center; padding-left: 10px;">
+                                        2021年05月28日
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle" rowspan="1" colspan="1" height="48">
+                        系副书记意见
+                        <br>
+                    </td>
+                    <td valign="middle" rowspan="1" colspan="3" height="48">
+                        <div>
+                            <div style="text-align: left;padding: 15px 25px; ">
+                                <div style="height: 35px; line-height: 35px;">
+                                    <span style="float: left;">
+                                        李闯
+                                    </span>
+                                    <span style="float: center; padding-left: 10px;">
+                                        2021年05月28日
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="middle" rowspan="1" colspan="1" height="27">
+                        系书记意见
+                        <br>
+                    </td>
+                    <td valign="middle" rowspan="1" colspan="3" height="27">
+                        <div>
+                            <div>
+                                <div>
+                                    <span style="float: left;">
+
+                                    </span>
+                                    <span style="float: center; padding-left: 10px;">
+
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+<script>
+    var str = Base64.decode(parent.location.href.split("?")[1]); //解码URL中的信息
+
+    function name1() {
+        var a1 = str.split("&")[0];
+        var a2 = a1.split("=")[1];
+        document.getElementById("1name").innerHTML = a2;
+    }
+
+    function sclass() {
+        var a1 = str.split("&")[1];
+        var a2 = a1.split("=")[1];
+        document.getElementById("1class").innerHTML = a2;
+    }
+
+    function studentnumber() {
+        var a1 = str.split("&")[2];
+        var a2 = a1.split("=")[1];
+        document.getElementById("1studentnumber").innerHTML = a2;
+    }
+
+    function phonenumber() {
+        var a1 = str.split("&")[3];
+        var a2 = a1.split("=")[1];
+        document.getElementById("1phonenumber").innerHTML = a2;
+    }
+
+    function requesttime() {
+        var a1 = str.split("&")[4];
+        var a2 = a1.split("=")[1];
+        var aa = a2.replace("T", " ");
+        document.getElementById("1requesttime").innerHTML = a2;
+        console.log(a2);
+    }
+
+    function stime() {
+        var a1 = str.split("&")[5];
+        var a2 = a1.split("=")[1];
+        document.getElementById("1stime").innerHTML = a2;
+        console.log(a2);
+    }
+
+    function edtime() {
+        var a1 = str.split("&")[6];
+        var a2 = a1.split("=")[1];
+        document.getElementById("1edtime").innerHTML = a2;
+        console.log(a2);
+    }
+
+    function reason() {
+        var a1 = str.split("&")[7];
+        var a2 = a1.split("=")[1];
+        document.getElementById("1reason").innerHTML = a2;
+        console.log(a2);
+    }
+
+    function details() {
+        var a1 = str.split("&")[8];
+        var a2 = a1.split("=")[1];
+        document.getElementById("1details").innerHTML = a2;
+        console.log(a2);
+    }
+
+    function passtime() {
+        var a1 = str.split("&")[9];
+        var a2 = a1.split("=")[1];
+        document.getElementById("1passtime").innerHTML = a2;
+    }
+
+    function day() {
+        var a1 = str.split("&")[10];
+        var a2 = a1.split("=")[1];
+        document.getElementById("1day").innerHTML = a2;
+    }
+
+    function duration() {
+        var a1 = str.split("&")[11];
+        var a2 = a1.split("=")[1];
+        document.getElementById("1duration").innerHTML = a2;
+    }
+    name1();
+    sclass();
+    studentnumber();
+    phonenumber();
+    requesttime();
+    stime();
+    edtime();
+    reason();
+    details();
+    passtime();
+    day();
+    duration();
+</script>
+
+</html>
