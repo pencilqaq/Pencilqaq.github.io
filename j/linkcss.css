@@ -15,7 +15,7 @@ p{
     padding: 0;
 }
 .b li{
-    display: inline-table;
+    display: inline-block;
 }
 .import{
     color: red;
