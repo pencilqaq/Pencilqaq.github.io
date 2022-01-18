@@ -11,10 +11,10 @@ p{
     margin: 0;
     text-align: center;
 }
-ul{
+.b{
     padding: 0;
 }
-li{
+.b li{
     display: inline-table;
 }
 .import{
