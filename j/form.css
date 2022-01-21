@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+bdoy{
+    line-height: 22px; 
+}
+strong {
+    font-weight: bold;
+}
+
+table {
+    position: relative;
+}
+
+#complex{
+    line-height: 22px;
+    background: rgb(255, 255, 255);
+    margin: 0px;
+    padding: 5px;
+    width: 680px;
+    height: 822px;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    position: relative;
+    box-shadow: rgb(144, 144, 144) 0px 0px 5px;
+    overflow: hidden;
+}
+
+#complex p{
+    margin: 5px 0;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.showTableLine{
+    table-layout: fixed;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+}
+
+.showTableLine tr td {
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.mini-textbox-border input{
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    float: left;
+    line-height: 24px;
+    -webkit-box-sizing: content-box;
+    font-family: Microsoft YaHei !important;
+    font-size: 14px;
+    border: 0;
+    background: none;
+    cursor: default;
+    height: 100% !important;
+}
+input.yn{
+    overflow: hidden;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 2px;
+}
+.ynt{
+    position: relative;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+
+}
+.mini-coordinate {
+    background: url(./icon-flow-zuobiao.png) no-repeat 0px 0px;
+    padding: 1px 0px 1px 18px;
+    color: blue;
+    text-decoration: none;
+}
