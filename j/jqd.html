@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input readonly="" class="form-control" type="text" id="date-group1-5" placeholder="YYYY-MM-DD hh:mm:ss">
+</body>
+<script>
+    window.onload = function () {
+         new Rolldate({
+            el: '#date-group1-5',
+            format: 'YYYY-MM-DD hh:mm:ss',
+            beginYear: 2000,
+            endYear: 2100,
+            minStep: 1,
+            lang: {
+                title: '自定义标题',
+                confirm: '确认',
+                year: '年',
+                month: '月',
+                day: '日',
+                hour: '时',
+                min: '分',
+                sec: '秒'
+            },
+            trigger: 'tap',
+            init: function () {
+                console.log('插件开始触发');
+            },
+            moveEnd: function (scroll) {
+                console.log(scroll)
+                console.log('滚动结束');
+            },
+            confirm: function (date) {
+                console.log(date)
+                console.log('确定按钮触发');
+            },
+            cancel: function () {
+                console.log('插件运行取消');
+            }
+        })
+        
+    }
+    
+</script>
+<script src="./jqd/rolldate.min.js"></script>
+</html>

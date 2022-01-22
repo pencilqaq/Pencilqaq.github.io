@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .pp {
+            width: 690px;
+            height: 894px;
+            min-width: 138px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mini-fit wrapper" id="wrapper">
+        <div id="pp" class="pp">
+
+            <iframe width="100%" style=" border: none; pointer-events: none;" height="100%" src="./formPreview.html"
+                frameborder="0"></iframe>
+
+        </div>
+    </div>
+</body>
+
+
+</html>
+<script type="text/javascript">
+    var width = window.parent.document.body.clientWidth;
+    var scw = width / 690;
+    //console.log(width);
+    //console.log(scw);
+    document.getElementById('pp').style.transform = "scale(" + scw + ")"
+    document.getElementById('pp').style.transformOrigin = '0 0';
+
+    var oDiv = document.getElementById('pp');
+    var box = document.getElementById('wrapper');
+    var scal;
+
+    function onMouseWheel(ev) {
+        /*当鼠标滚轮事件发生时，执行一些操作*/
+        var ev = ev || window.event;
+        var down = true; // 定义一个标志，当滚轮向下滚时，执行一些操作
+        down = ev.wheelDelta ? ev.wheelDelta < 0 : ev.detail > 0;
+        sc = parseFloat(document.getElementById('pp').style.transform.replace("scale(", "").replace(")", ""));
+        //console.log(sc);
+        //console.log(typeof sc);
+        mx = event.clientX;
+        my = event.clientY;
+        console.log(mx);
+        console.log(my);
+
+        if (down) {
+            //console.log('鼠标滚轮向下缩小')
+            if (sc > 0.4 || sc == 0.4) {
+                scal = sc - 0.2;
+                //console.log("放大系数: " + scal)
+            } else {
+                scal = 0.2;
+            }
+            oDiv.style.transform = "scale(" + scal + ")"; //scale()在这里要使用拼接的方式才能生效
+            if (scal < scw || scal == scw) {
+                oDiv.style.transformOrigin = '0 0';
+            } else {
+                oDiv.style.transformOrigin = mx + "px " + " " + my + "px ";
+            }
+        } else {
+            //console.log('鼠标滚轮向上放大')
+
+            if (sc > 3.80 || sc == 3.80) {
+                scal = 4.0;
+            } else {
+                scal = sc + 0.2;
+            }
+            //console.log("放大系数: " + scal)
+            oDiv.style.transform = "scale(" + scal + ")"; //scale()在这里要使用拼接的方式才能生效。
+            if (scal < scw || scal == scw) {
+                oDiv.style.transformOrigin = '0 0';
+            } else {
+                oDiv.style.transformOrigin = mx + "px " + " " + my + "px ";
+            }
+        }
+        if (ev.preventDefault) {
+            /*FF 和 Chrome*/
+            ev.preventDefault(); // 阻止默认事件
+        }
+        return false;
+    }
+
+    addEvent(box, 'mousewheel', onMouseWheel);
+    addEvent(box, 'DOMMouseScroll', onMouseWheel);
+
+
+    function addEvent(obj, xEvent, fn) {
+        if (obj.attachEvent) {
+            obj.attachEvent('on' + xEvent, fn);
+        } else {
+            obj.addEventListener(xEvent, fn, false);
+        }
+    }
+
+    function centerScale() {
+        console.log("还原------")
+        scal = 1;
+        oDiv.style.transform = "scale(" + scal + ")";
+        oDiv.style.transformOrigin = '0 0';
+        // $("#drag").css({"transform": "scale(" + scal + ")","transformOrigin": "0 0"});//jquery写法
+    }
+
+
+    function getInfo() {
+
+        s = " 网页可见区域宽:" + document.body.clientWidth;
+        console.log(s);
+        s = " 网页可见区域高:" + document.body.clientHeight;
+        console.log(s);
+        s = " 网页可见区域宽:" + document.body.offsetWidth + " (包括边线和滚动条的宽)";
+        console.log(s);
+        s = " 网页可见区域高:" + document.body.offsetHeight + " (包括边线的宽)";
+        console.log(s);
+        s = " 网页正文全文宽:" + document.body.scrollWidth;
+        console.log(s);
+        s = " 网页正文全文高:" + document.body.scrollHeight;
+        console.log(s);
+        s = " 网页被卷去的高(ff):" + document.body.scrollTop;
+        console.log(s);
+        s = " 网页被卷去的高(ie):" + document.documentElement.scrollTop;
+        console.log(s);
+        s = " 网页被卷去的左:" + document.body.scrollLeft;
+        console.log(s);
+        s = " 网页正文部分上:" + window.screenTop;
+        console.log(s);
+        s = " 网页正文部分左:" + window.screenLeft;
+        console.log(s);
+        s = " 屏幕分辨率的高:" + window.screen.height;
+        console.log(s);
+        s = " 屏幕分辨率的宽:" + window.screen.width;
+        console.log(s);
+        s = " 屏幕可用工作区高度:" + window.screen.availHeight;
+        console.log(s);
+        s = " 屏幕可用工作区宽度:" + window.screen.availWidth;
+        console.log(s);
+
+        s = " 你的屏幕设置是 " + window.screen.colorDepth + " 位彩色";
+        console.log(s);
+        s = " 你的屏幕设置 " + window.screen.deviceXDPI + " 像素/英寸";
+        console.log(s);
+        //alert (s); 
+    }
+    getInfo();
+</script>

@@ -31,6 +31,7 @@
                     
                 }
                 */
+        /*
         function random() {
             var random = Math.floor(Math.random() * 60); // 随机生成0-59 之间的数值
             if (random <= 9) //个位数补零
@@ -43,6 +44,7 @@
         var random_1 = random();
         var random_2 = random();
         var random_3 = random();
+        */
 
         function jumpTopage() {
             var name = document.getElementById("name").value;
@@ -55,8 +57,10 @@
             var reason = document.getElementById("reason").value;
             var details = document.getElementById("details").value;
             var passtime = document.getElementById("passtime").value;
-            var day = document.getElementById("day").value;
-            var duration = document.getElementById("duration").value;
+            //var day = document.getElementById("day").value;
+            var day = Dc(stime, edtime);
+            //var duration = document.getElementById("duration").value;
+            var duration = Dc2(requesttime, passtime);
             var base = Base64.encodeURI("name=" + name + "&class=" + sclass + "&studentnumber=" + studentnumber +
                 "&phonenumber=" + phonenumber + "&requesttime=" + requesttime + "&stime=" + stime + "&edtime=" +
                 edtime + "&reason=" + reason + "&details=" + details + "&passtime=" + passtime + "&day=" + day +
@@ -68,67 +72,129 @@
 </head>
 
 <body>
-    <ul class="b">
-        <li type="none">
-            <p><strong>姓名</strong></p>
-            <input id="name" class="input-box" type="text" placeholder="姓名">
-        </li>
-        <li type="none">
-            <p><strong>班级</strong></p>
-            <input id="class" class="input-box" type="text" placeholder="班级">
-        </li>
-        <li type="none">
-            <p><strong>学号</strong></p>
-            <input id="studentnumber" class="input-box" type="text" placeholder="学号">
-        </li>
-        <li type="none">
-            <p><strong>电话</strong></p>
-            <input id="phonenumber" class="input-box" type="tel" placeholder="电话">
-        </li>
-        <li type="none">
-            <p><strong>假条申请时间</strong></p>
+    <div>
+        <ul class="b">
+            <li type="none">
+                <p><strong>姓名</strong></p>
+                <input id="name" class="input-box" type="text" placeholder="姓名">
+            </li>
+            <li type="none">
+                <p><strong>班级</strong></p>
+                <input id="class" class="input-box" type="text" placeholder="班级">
+            </li>
+            <li type="none">
+                <p><strong>学号</strong></p>
+                <input id="studentnumber" class="input-box" type="text" placeholder="学号">
+            </li>
+            <li type="none">
+                <p><strong>电话</strong></p>
+                <input id="phonenumber" class="input-box" type="tel" placeholder="电话">
+            </li>
+            <li type="none">
+                <p><strong>假条申请时间</strong></p>
 
-            <input readonly="" class="input-box" type="text" id="requesttime" placeholder="假条申请时间">
-        </li>
-        <li type="none">
-            <p><strong>开始时间</strong></p>
-            <input id="stime" class="input-box" type="text" placeholder="开始时间">
-        </li>
-        <li type="none">
-            <p><strong>结束时间</strong></p>
-            <input id="edtime" class="input-box" type="text" placeholder="结束时间">
-        </li>
-        <li type="none">
-            <p><strong>请假原因</strong></p>
-            <select id="reason" class="input-box select" required name="事假">
-                <option value="事假">事假</option>
-                <option value="病假">病假</option>
-                <option value="其他">其他</option>
-            </select>
-        </li>
-        <li type="none">
-            <p><strong>请假详细情况</strong></p>
-            <input id="details" class="input-box" type="text" placeholder="请假详细情况">
-        </li>
-        <li type="none">
-            <p><strong>假条批准时间</strong></p>
-            <input id="passtime" class="input-box" type="text" placeholder="假条批准时间">
-        </li>
-        <li type="none">
-            <p><strong>请假天数</strong></p>
-            <input id="day" class="input-box" type="text" placeholder="请假天数">
-        </li>
-        <li type="none">
-            <p><strong>耗时</strong></p>
-            <input id="duration" class="input-box" type="text" placeholder="耗时(分钟/小时)">
+                <input readonly="" class="input-box" type="text" id="requesttime" placeholder="假条申请时间">
+            </li>
+            <li type="none" class="passtime">
+                <p><strong>假条批准时间</strong></p>
+                <input id="passtime" class="input-box" type="text" placeholder="假条批准时间">
+            </li>
+            <li type="none">
+                <p><strong>开始时间</strong></p>
+                <input id="stime" class="input-box" type="text" placeholder="开始时间">
+            </li>
+            <li type="none">
+                <p><strong>结束时间</strong></p>
+                <input id="edtime" class="input-box" type="text" placeholder="结束时间">
+            </li>
+            <li type="none">
+                <p><strong>是否耽误课程</strong></p>
+                <select id="reason" class="input-box select" required name="事假">
+                    <option style="display: none;"></option>
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </li>
+            <li type="none">
+                <p><strong>请假原因</strong></p>
+                <select id="reason" class="input-box select" required name="事假">
+                    <option style="display: none;"></option>
+                    <option value="事假">事假</option>
+                    <option value="病假">病假</option>
+                    <option value="其他">其他</option>
+                </select>
+            </li>
+            <li type="none">
+                <p><strong>请假详细情况</strong></p>
+                <textarea id="details" maxlength="184" wrap="soft" placeholder="请假详细情况"></textarea>
+            </li>
 
-        </li>
-        <li type="none">
-            <input class="button" type="submit" value="下一步" onclick="jumpTopage()">
-        </li>
-    </ul>
+            <!--
+            <li type="none">
+                <p><strong>请假天数</strong></p>
+                <input id="day" class="input-box" type="text" placeholder="请假天数">
+            </li>
+        
+            <li type="none">
+                <p><strong>耗时</strong></p>
+                <input id="duration" class="input-box" type="text" placeholder="耗时(分钟/小时)">
+
+            </li>
+            -->
+
+        </ul>
+        <input class="button" type="submit" value="下一步" onclick="jumpTopage()">
+    </div>
 </body>
+
 <script>
+    function Dc(stime, etime) {
+        var startTime = Date.parse(new Date(stime));
+        var endTime = Date.parse(new Date(etime));
+        // 两个时间戳相差的毫秒数
+        var usedTime = endTime - startTime;
+        // 计算相差的天数  
+        var days = Math.floor(usedTime / (24 * 3600 * 1000));
+        // 计算天数后剩余的毫秒数
+        var leave1 = usedTime % (24 * 3600 * 1000);
+        // 计算出小时数  
+        var hours = Math.floor(leave1 / (3600 * 1000));
+        // 计算小时数后剩余的毫秒数
+        var leave2 = leave1 % (3600 * 1000);
+        // 计算相差分钟数
+        var minutes = Math.floor(leave2 / (60 * 1000));
+        var time = days + (hours * 60 + minutes) / 1440;
+        return time.toFixed(1);
+    }
+
+    function Dc2(stime, etime) {
+        var startTime = Date.parse(new Date(stime));
+        var endTime = Date.parse(new Date(etime));
+        // 两个时间戳相差的毫秒数
+        var usedTime = endTime - startTime;
+        // 计算相差的天数  
+        var days = Math.floor(usedTime / (24 * 3600 * 1000));
+        // 计算天数后剩余的毫秒数
+        var leave1 = usedTime % (24 * 3600 * 1000);
+        // 计算出小时数  
+        var hours = Math.floor(leave1 / (3600 * 1000));
+        // 计算小时数后剩余的毫秒数
+        var leave2 = leave1 % (3600 * 1000);
+        // 计算相差分钟数
+        var minutes = Math.floor(leave2 / (60 * 1000));
+        //var time = days + (hours * 60 + minutes) / 1440;
+        if (hours >= 1) {
+            time = hours + Math.round((minutes + 1)  / 60);
+            console.log(time);
+            return time + '小时';
+        } else {
+            if(minutes+1 == 60)
+            return 1 + '小时';
+            return minutes + 1 + '分钟';
+        }
+    }
+
+
     window.onload = function () {
         new Rolldate({
             el: '#requesttime',
@@ -136,7 +202,7 @@
             beginYear: 2000,
             endYear: 2100,
             minStep: 1,
-            trigger: 'tap',
+            //trigger: 'tap',
             lang: {
                 title: '假条申请时间'
             },
@@ -147,7 +213,7 @@
             beginYear: 2000,
             endYear: 2100,
             minStep: 1,
-            trigger: 'tap',
+            //trigger: 'tap',
             lang: {
                 title: '开始时间'
             },
@@ -158,18 +224,18 @@
             beginYear: 2000,
             endYear: 2100,
             minStep: 1,
-            trigger: 'tap',
+            //trigger: 'tap',
             lang: {
                 title: '结束时间'
             },
         })
         new Rolldate({
             el: '#passtime',
-            format: 'YYYY-MM-DD hh:mm:ss',
+            format: 'YYYY-MM-DD hh:mm',
             beginYear: 2000,
             endYear: 2100,
             minStep: 1,
-            trigger: 'tap',
+            //trigger: 'tap',
             lang: {
                 title: '假条批准时间'
             },
