@@ -36,8 +36,8 @@ p{
 #details{
     margin: 10px 0;
     padding: 3px 6px;
-    max-width: 340px;
-    min-width: 340px;
+    max-width: 342.5px;
+    min-width: 342.5px;
     max-height: 120px;
     min-height: 120px;
     overflow: hidden;
@@ -53,6 +53,6 @@ p{
     margin: 10px auto;
 }
 .select{
-    width: 175px;
+    width: 176px;
     height: 50px;
 }

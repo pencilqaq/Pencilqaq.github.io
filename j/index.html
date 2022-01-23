@@ -57,6 +57,8 @@
             var reason = document.getElementById("reason").value;
             var details = document.getElementById("details").value;
             var passtime = document.getElementById("passtime").value;
+            var ync = document.getElementById("ync").value;
+            var lessons = document.getElementById("lessons").value;
             //var day = document.getElementById("day").value;
             var day = Dc(stime, edtime);
             //var duration = document.getElementById("duration").value;
@@ -64,7 +66,7 @@
             var base = Base64.encodeURI("name=" + name + "&class=" + sclass + "&studentnumber=" + studentnumber +
                 "&phonenumber=" + phonenumber + "&requesttime=" + requesttime + "&stime=" + stime + "&edtime=" +
                 edtime + "&reason=" + reason + "&details=" + details + "&passtime=" + passtime + "&day=" + day +
-                "&duration=" + duration);
+                "&ync=" + ync + "&lessons=" + lessons);
             var myurl = "jt.html?" + base;
             window.location.assign(myurl);
         }
@@ -80,7 +82,14 @@
             </li>
             <li type="none">
                 <p><strong>班级</strong></p>
+                <!--
                 <input id="class" class="input-box" type="text" placeholder="班级">
+                -->
+                <select id="class" class="input-box select">
+                    <option style="display: none;"></option>
+                    <option value="20-3">20-3</option>
+                    <option value="20-4">20-4</option>
+                </select>
             </li>
             <li type="none">
                 <p><strong>学号</strong></p>
@@ -109,7 +118,7 @@
             </li>
             <li type="none">
                 <p><strong>是否耽误课程</strong></p>
-                <select id="reason" class="input-box select" required name="事假">
+                <select id="ync" class="input-box select" required name="事假">
                     <option style="display: none;"></option>
                     <option value="是">是</option>
                     <option value="否">否</option>
@@ -123,6 +132,11 @@
                     <option value="病假">病假</option>
                     <option value="其他">其他</option>
                 </select>
+            </li>
+            <li type="none" id="KCJS" style="display: none;">
+                <p><strong>耽误课程节数</strong></p>
+
+                <input class="input-box" type="number" id="lessons" min="0" placeholder="假条申请时间" style=" width:340.5px">
             </li>
             <li type="none">
                 <p><strong>请假详细情况</strong></p>
@@ -148,6 +162,13 @@
 </body>
 
 <script>
+    document.getElementById("ync").onchange = function s(){
+        if (document.getElementById("ync").value == "是"){
+            document.getElementById("KCJS").style.display = "inline-table";
+        }else {
+            document.getElementById("KCJS").style.display = "none";
+        }
+    }  
     function Dc(stime, etime) {
         var startTime = Date.parse(new Date(stime));
         var endTime = Date.parse(new Date(etime));

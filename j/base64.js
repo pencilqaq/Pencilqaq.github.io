@@ -229,6 +229,7 @@
     /**
      * converts a Base64 string to a Uint8Array.
      */
+    var _unURI = function (a) { return _tidyB64(a.replace(/[-_]/g, function (m0) { return m0 == '-' ? '+' : '/'; })); };
     var toUint8Array = function (a) { return _toUint8Array(_unURI(a)); };
     //
     var _decode = _hasBuffer
@@ -236,7 +237,8 @@
         : _TD
             ? function (a) { return _TD.decode(_toUint8Array(a)); }
             : function (a) { return btou(_atob(a)); };
-    var _unURI = function (a) { return _tidyB64(a.replace(/[-_]/g, function (m0) { return m0 == '-' ? '+' : '/'; })); };
+
+    //var _unURI = function (a) { return _tidyB64(a.replace(/[-_]/g, function (m0) { return m0 == '-' ? '+' : '/'; })); };
     /**
      * converts a Base64 string to a UTF-8 string.
      * @param {String} src Base64 string.  Both normal and URL-safe are supported

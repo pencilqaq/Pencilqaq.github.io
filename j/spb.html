@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>Document</title>
-
+    <script src="./zoom.js"></script>
     <style>
         * {
             margin: 0;
@@ -41,7 +41,10 @@
 
 </html>
 <script type="text/javascript">
+    
     var width = window.parent.document.body.clientWidth;
+    var height = window.parent.document.body.clientHeight;
+    document.body.style.height = height + "px";
     var scw = width / 690;
     //console.log(width);
     //console.log(scw);
@@ -62,6 +65,7 @@
         //console.log(typeof sc);
         mx = event.clientX;
         my = event.clientY;
+
         console.log(mx);
         console.log(my);
 
@@ -121,8 +125,17 @@
         oDiv.style.transformOrigin = '0 0';
         // $("#drag").css({"transform": "scale(" + scal + ")","transformOrigin": "0 0"});//jquery写法
     }
-
-
+    /*
+    var el = document.getElementById("pp");
+			new PinchZoom.default(el, {});
+			var imga = document.getElementById("pp");
+			imga.onclick = function(event) {
+				console.log(event)
+				var e = event || window.event;
+				console.log(e.screenX);
+			}
+    */
+    /*
     function getInfo() {
 
         s = " 网页可见区域宽:" + document.body.clientWidth;
@@ -163,4 +176,5 @@
         //alert (s); 
     }
     getInfo();
+    */
 </script>

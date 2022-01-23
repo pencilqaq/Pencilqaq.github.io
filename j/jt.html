@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="web.css">
-    <script src="./base64.js"></script>
     <title>处理表单</title>
 </head>
 
@@ -29,11 +28,15 @@
         <iframe src="./clbd.html" height="100%" width="100%" frameborder="0"></iframe>
     </div>
     <div class="bdyl" style="height: calc(100vh); overflow: hidden;">
-        <iframe src="./spb.html" height="100%"  width="100%" style="margin-top: 50px; " zoom=1 frameborder="0"></iframe>
+        <iframe id="if2" src="./spb.html" height="100%" width="100%" style="margin-top: 50px; " zoom=1 frameborder="0"></iframe>
         <!--
-        <iframe src="./shenpibiao.html" height="100%" width="100%" frameborder="0"></iframe>
-            -->
+        <iframe src="./shenpibiao2.html" height="100%" width="100%" frameborder="0"></iframe>
+          -->  
     </div>
 </body>
-
+<script>
+    wy = document.body.clientHeight - 50;
+    //console.log(wy);
+    //document.getElementById("if2").style.height = wy + "px";
+</script>
 </html>
