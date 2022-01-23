@@ -177,7 +177,7 @@
                         </td>
                         <td width="176" height="27" valign="middle" style="border-color: rgb(38, 38, 38); ">
                             <span class="mini-textbox-border">
-                                <input type="text" id="KC"  value="123" maxlength="200" readonly>
+                                <input type="text" id="KC"  value="#" maxlength="200" readonly>
                             </span>
                         </td>
                     </tr>
@@ -347,7 +347,7 @@ window.onload = function () {
         document.getElementById("2passtime").innerHTML = d1[0] + '年' + d1[1] + '月' + d1[2] + '日';
     }
 
-    a1 = str.split("&")[11];
+    a1 = str.split("&")[12];
     a2 = a1.split("=")[1];
     console.log(a2);
     console.log(a1);
@@ -357,9 +357,14 @@ window.onload = function () {
         document.getElementById("N").click();
     }
     
-    a1 = str.split("&")[12];
+    a1 = str.split("&")[13];
     a2 = a1.split("=")[1];
-    document.getElementById("KC").value = a2;
+    if(document.getElementById("Y").checked){
+        document.getElementById("KC").value = a2;
+    }else{
+        document.getElementById("KC").value = '0';
+    }
+    
 }
 </script>
 </html>
